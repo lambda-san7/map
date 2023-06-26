@@ -1,0 +1,39 @@
+html {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    border: 1px solid white;
+    padding: 50px;
+}
+
+button {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    border: 1px solid white;
+}
+
+.grid {
+    float: left;
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    grid-column-gap: 0px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.map {
+    float: right;
+    height: fit-content;
+    width: 610px;
+    border: 1px solid rgb(253, 253, 253);
+}
+
+  /* Style the individual squares */
+.square {
+    border: 1px solid rgb(253, 253, 253);
+    background-color: rgb(0, 0, 0);
+    width: 20px;
+    height: 20px;
+}
