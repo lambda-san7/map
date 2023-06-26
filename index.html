@@ -1,10 +1,12 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
+    <title>Map Maker</title>
   </head>
   <body>
     <div class="grid" id="grid">
     </div>
+    
     <div class="map">
         <button onclick="load()">Load Map</button>
         <div id="mapout">
@@ -28,8 +30,13 @@
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-
         </div>
+    <button style="background-color: green;" onclick="change_pen('green',4)">Grass</button>
+    <button style="background-color: gray;" onclick="change_pen('gray',1)">Sidewalk</button>
+    <button style="background-color: black;" onclick="change_pen('black',0)">Road</button>
+    <button style="background-color: pink;" onclick="change_pen('pink',2)">Crosswalk Horizontal</button>
+    <button style="background-color: lightblue;" onclick="change_pen('lightblue',3)">Crosswalk Horizontal</button>
+    <button style="background-color: darkslategray" onclick="change_pen('darkslategray',5)">Concrete</button>
     </div>
     <script src="script.js"></script>
   </body>
