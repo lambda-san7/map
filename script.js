@@ -78,13 +78,9 @@ function clicked(button){
 
 function place(button){
     for (let i = 0; i < prop_range; i++) {
-        console.log("for")
         copy = document.getElementById(`p${Number(button.id.slice(1,button.id.indexOf(","))) + i}${button.id.slice(button.id.indexOf(","))}`)
-        button.style.backgroundColor = prop_color;
         copy.style.backgroundColor = prop_color;
-        console.log(prop_color)
-        console.log(copy)
-        prop_map[Number(button.id.slice(1,button.id.indexOf(","))) + i][button.id.slice(button.id.indexOf(","))] = prop_code
+        prop_map[Number(button.id.slice(button.id.indexOf(",") + 1))][Number(button.id.slice(1,button.id.indexOf(","))) + i] = prop_code
     }
 }
 
@@ -140,9 +136,9 @@ load = function(){
     ////////// PROP LOAD BELOW /////////// 
 
     fullmap = ""
-    for (let i in map) {
+    for (let i in prop_map) {
         row = ""
-        for (let j in map[i]){
+        for (let j in prop_map[i]){
             row = row.concat(prop_map[j][i],", ");
         }
         console.log(`[${row}],`)
