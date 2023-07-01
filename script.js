@@ -80,7 +80,7 @@ function place(button){
     for (let i = 0; i < prop_range; i++) {
         copy = document.getElementById(`p${Number(button.id.slice(1,button.id.indexOf(","))) + i}${button.id.slice(button.id.indexOf(","))}`)
         copy.style.backgroundColor = prop_color;
-        prop_map[Number(button.id.slice(button.id.indexOf(",") + 1))][Number(button.id.slice(1,button.id.indexOf(","))) + i] = prop_code
+        prop_map[Number(button.id.slice(1,button.id.indexOf(","))) + i][Number(button.id.slice(button.id.indexOf(",") + 1))] = prop_code
     }
 }
 
@@ -172,7 +172,8 @@ function propsOff(button){
     props = document.getElementsByClassName("prop")
     squares = document.getElementsByClassName("square")
     for (let i = 0; i < props.length; i++) {
-        props[i].style.visibility = "hidden"
+        squares[i].style.opacity = "50%"
+        squares[i].style.zIndex = "1"
     }
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.opacity = "100%"
@@ -189,7 +190,8 @@ function propsOn(button){
     props = document.getElementsByClassName("prop")
     squares = document.getElementsByClassName("square")
     for (let i = 0; i < props.length; i++) {
-        props[i].style.visibility = "visible"
+        squares[i].style.opacity = "100%"
+        squares[i].style.zIndex = "100"
     }
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.opacity = "50%"
