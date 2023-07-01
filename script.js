@@ -120,7 +120,7 @@ for (let i = 0; i < 30; i++) {
     }
   }
 
-load = function(){
+start_up = function(){
     fullmap = ""
     for (let i in map) {
         row = ""
@@ -147,6 +147,37 @@ load = function(){
     console.log(fullmap)
     document.getElementById("propout").innerHTML = fullmap
 }
+
+load = function(){
+    fullmap = ""
+    for (let i in map) {
+        row = ""
+        for (let j in map[i]){
+            row = row.concat(map[j][i],", ");
+        }
+        console.log(`[${row}],`)
+        fullmap = fullmap.concat(`[${row}],`,"\n");
+    }
+    console.log(fullmap)
+    document.getElementById("mapout").innerHTML = fullmap
+
+    ////////// PROP LOAD BELOW /////////// 
+
+    fullmap2 = ""
+    for (let i in prop_map) {
+        row = ""
+        for (let j in prop_map[i]){
+            row = row.concat(prop_map[j][i],", ");
+        }
+        console.log(`[${row}],`)
+        fullmap2 = fullmap2.concat(`[${row}],`,"\n");
+    }
+    console.log(fullmap2)
+    document.getElementById("propout").innerHTML = fullmap2
+    navigator.clipboard.writeText(`loc_map = [${fullmap}], prop_map = [${fullmap2}]`);
+    alert("loc_map and prop_map have been copied to your clipboard (also if you had something on your clipboard and this just erased it sorry :I)")
+}
+
 
 
 change_pen = function(clr,num,name){
@@ -189,7 +220,7 @@ function propsOn(button){
     button.innerHTML = "Deactivate Prop_Map";
     props = document.getElementsByClassName("prop")
     squares = document.getElementsByClassName("square")
-    for (let i = 0; i < props.length; i++) {
+    for (let i =  0; i < props.length; i++) {
         squares[i].style.opacity = "100%"
         squares[i].style.zIndex = "100"
     }
@@ -202,4 +233,4 @@ function propsOn(button){
     }
 }
 
-load()
+start_up()
