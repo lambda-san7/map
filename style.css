@@ -3,7 +3,7 @@ html {
     font-family: 'Courier New', Courier, monospace;
     color: white;
     border: 1px solid white;
-    padding: 50px;
+    padding: 10px;
 }
 
 button {
@@ -16,24 +16,40 @@ button {
 .grid {
     float: left;
     display: grid;
-    grid-template-columns: repeat(20, 20px);
-    grid-template-rows: repeat(20, 20px);
+    grid-template-columns: repeat(30, 20px);
+    grid-template-rows: repeat(30, 20px);
     grid-column-gap: 0px;
-    height: fit-content;
-    width: fit-content;
+}
+
+.props {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(30, 20px);
+    grid-template-rows: repeat(30, 20px);
+    grid-column-gap: 0px;
+    z-index: 50;
 }
 
 .map {
     float: right;
-    height: fit-content;
-    width: 610px;
+    height: 400px;
+    width: 650px;
     border: 1px solid rgb(253, 253, 253);
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
-  /* Style the individual squares */
 .square {
+    opacity: 0%;
     border: 1px solid rgb(253, 253, 253);
     background-color: rgb(0, 0, 0);
+    width: 20px;
+    height: 20px;
+}
+
+.prop {
+    border: 1px solid rgb(253, 253, 253);
+    background-color: rgba(0, 0, 0, 0);
     width: 20px;
     height: 20px;
 }

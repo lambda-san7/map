@@ -4,39 +4,46 @@
     <title>Map Maker</title>
   </head>
   <body>
+    <div>
+      <button style="background-color: green;" id="cur_pen">Grass</button>
+      <button style="background-color: red;" id="cur_prop">Vending Machine</button>
+    </div>
     <div class="grid" id="grid">
     </div>
-    
+    <div class="props" id="grid2">
+    </div>
     <div class="map">
-        <button onclick="load()">Load Map</button>
+      <button onclick="load()">Load Map</button>
+        <button style="border: 1px solid red;" onclick="propsOff(this)">Deactivate Prop_Map</button>
+        <h5>Tile Map</h5>
         <div id="mapout">
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
         </div>
-    <button style="background-color: green;" onclick="change_pen('green',4)">Grass</button>
-    <button style="background-color: gray;" onclick="change_pen('gray',1)">Sidewalk</button>
-    <button style="background-color: black;" onclick="change_pen('black',0)">Road</button>
-    <button style="background-color: pink;" onclick="change_pen('pink',2)">Crosswalk Horizontal</button>
-    <button style="background-color: lightblue;" onclick="change_pen('lightblue',3)">Crosswalk Horizontal</button>
-    <button style="background-color: darkslategray" onclick="change_pen('darkslategray',5)">Concrete</button>
+    <button style="background-color: green;" onclick="change_pen('green',4,'Grass')">Grass</button>
+    <button style="background-color: gray;" onclick="change_pen('gray',1,'Sidewalk')">Sidewalk</button>
+    <button style="background-color: black;" onclick="change_pen('black',0,'Road')">Road</button>
+    <button style="background-color: pink;" onclick="change_pen('pink',2,'Crosswalk Horizontal')">Crosswalk Horizontal</button>
+    <button style="background-color: lightblue;" onclick="change_pen('lightblue',3,'Crosswalk Vertical')">Crosswalk Vertical</button>
+    <button style="background-color: darkslategray" onclick="change_pen('darkslategray',5,'Concrete')">Concrete</button>
+    <h5>Prop Map</h5>
+    <div id="propout">
+      </div>
+    <button style="background-color: rgba(0, 0, 0, 0);" onclick="change_prop('rgba(0,0,0,0)',0,'Remove Prop',1)">Remove Prop</button>
+    <button style="background-color: rgb(255, 0, 0);" onclick="change_prop('red',1,'Vending Machine',1)">Vending Machine 1</button>
+    <button style="background-color: blue;" onclick="change_prop('blue',2,'Vending Machine',1)">Vending Machine 2</button>
+    <button style="background-color: rgb(102, 91, 27);" onclick="change_prop('rgb(102, 91, 27)',3,'Telephone Pole',2)">Telephone Pole 1</button>
+    <button style="background-color: rgb(102, 91, 27);" onclick="change_prop('rgb(102, 91, 27)',4,'Telephone Pole',2)">Telephone Pole 2</button>
+    <button style="background-color: rgb(58, 58, 58);" onclick="change_prop('rgb(102, 91, 27)',5,'Wires',2)">Wires</button>
+    <button style="background-color: rgb(255, 102, 0);" onclick="change_prop('rgb(255, 102, 0)',6,'Convenience Store',4)">Convenience Store</button>
+    <button style="background-color: rgb(255, 251, 0);" onclick="change_prop('rgb(255, 251, 0)',7,'Street Light',2)">Street Light</button>
+    <button style="background-color: rgb(163, 163, 163);" onclick="change_prop('rgb(255, 251, 0)',8,'Car',4)">Car 1</button>
+    <button style="background-color: rgb(163, 163, 163);" onclick="change_prop('rgb(255, 251, 0)',9,'Car',4)">Car 2</button>
+    <button style="background-color: rgb(163, 163, 163);" onclick="change_prop('rgb(255, 251, 0)',10,'Car',4)">Car 3</button>
+    <button style="background-color: rgb(121, 0, 0);" onclick="change_prop('rgb(121, 0, 0)',11,'Stop Sign',1)">Stop Sign</button>
+    <button style="background-color: rgb(158, 157, 76);" onclick="change_prop('rgb(158, 157, 76)',12,'House',4)">House 1</button>
+    <button style="background-color: rgb(158, 157, 76);" onclick="change_prop('rgb(158, 157, 76)',13,'House',4)">House 2</button>
+    <button style="background-color: rgb(0, 255, 13);" onclick="change_prop('rgb(0, 255, 13)',14,'Bush',1)">Bush 1</button>
+    <button style="background-color: rgb(0, 255, 13);" onclick="change_prop('rgb(0, 255, 13)',15,'Bush',1)">Bush 2</button>
+    
     </div>
     <script src="script.js"></script>
   </body>
