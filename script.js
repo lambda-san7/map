@@ -121,6 +121,7 @@ for (let i = 0; i < 30; i++) {
   }
 
 start_up = function(){
+    propsOff()
     fullmap = ""
     for (let i in map) {
         row = ""
@@ -210,7 +211,7 @@ function propsOff(button){
         squares[i].style.opacity = "100%"
         squares[i].style.zIndex = "100"
     }
-    button.onclick = function(){
+    button.onclick = () => {
         propsOn(this)
     }
 }
@@ -223,12 +224,13 @@ function propsOn(button){
     for (let i =  0; i < props.length; i++) {
         squares[i].style.opacity = "100%"
         squares[i].style.zIndex = "100"
+        console.log(squares[i])
     }
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.opacity = "50%"
         squares[i].style.zIndex = "1"
     }
-    button.onclick = function(){
+    button.onclick = () => {
         propsOff(this)
     }
 }

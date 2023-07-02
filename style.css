@@ -40,14 +40,15 @@ button {
 }
 
 .square {
-    opacity: 0%;
+    opacity: 1;
     border: 1px solid rgb(253, 253, 253);
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     width: 20px;
     height: 20px;
 }
 
 .prop {
+    opacity: 1;
     border: 1px solid rgb(253, 253, 253);
     background-color: rgba(0, 0, 0, 0);
     width: 20px;
